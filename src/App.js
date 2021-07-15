@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+
+import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import { Readingupsert } from "./Pages/Readingupsert";
+import { Billupsert } from "./Pages/Billupsert";
+import { Payments } from "./Pages/Payments";
+import { HomePage } from "./Pages/HomePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="bg-dark text-light p-3 d-flex justify-content-between ">
+        <Link to="/home-page">
+          <h6 className="mr-3">HOME-PAGE</h6>
+        </Link>
+
+        <Link to="/reading-upsert">
+          <h6 className="mr-3">READING-PAGE</h6>
+        </Link>
+
+        <Link to="/bill-upsert">
+          <h6 className="mr-3">BILL-PAGE</h6>
+        </Link>
+
+        <Link to="/payment">
+          <h6>Payment</h6>
+        </Link>
+      </div>
+
+      <Route exact path="/reading-upsert" component={Readingupsert} />
+
+      <Route exact path="/bill-upsert" component={Billupsert} />
+      <Route exact path="/payment" component={Payments} />
+      <Route exact path="/home-page" component={HomePage} />
+    </Router>
   );
 }
 
