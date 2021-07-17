@@ -11,6 +11,27 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, "sans-serif";
+}
+
+.app1 {
+  color: black;
+}
+
+.app1:hover {
+  color: #daa520;
+}
+
+input.transparent-input {
+  background-color: rgba(0, 0, 0, 0) !important;
+  /* border: none !important; */
+  border-bottom: 2px, solid;
+  color: azure;
+  text-emphasis-color: white;
+}
+.dropbtn {
+  font-size: 10px;
+}
+.dropbtn2 {
+  font-size: 1px;
 }

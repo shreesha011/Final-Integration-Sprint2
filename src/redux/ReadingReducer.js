@@ -34,7 +34,3 @@ export function ReadingReducer(state = initState, action) {
       return state;
   }
 }
-
-const store = createStore(ReadingReducer, applyMiddleware(thunk));
-
-export { store };

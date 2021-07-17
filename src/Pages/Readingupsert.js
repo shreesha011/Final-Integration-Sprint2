@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { createReadingAction } from "../redux/ReadingReducer";
 
 import { useHistory } from "react-router-dom";
+import { AppNav } from "./AppNav";
 
 export const Readingupsert = () => {
   const history = useHistory();
@@ -68,6 +69,7 @@ export const Readingupsert = () => {
 
   return (
     <div>
+      <AppNav />
       <div className="alert alert-secondary">
         <h3>Reading Create</h3>
       </div>
