@@ -1,7 +1,15 @@
 body {
-  background-image: url("https://cdn.pixabay.com/photo/2014/10/26/15/25/pylon-503935_960_720.jpg");
-  background-size: cover;
+  /* background-image: url("https://cdn.pixabay.com/photo/2014/10/26/15/25/pylon-503935_960_720.jpg");
+  background-size: cover; */
   background-repeat: no-repeat;
+  background-image: linear-gradient(rgb(7, 0, 30, 0.7), rgb(7, 0, 30, 0.1)),
+    url("https://cdn.pixabay.com/photo/2014/10/26/15/25/pylon-503935_960_720.jpg");
+  min-height: 100vh;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -26,12 +34,13 @@ input.transparent-input {
   background-color: rgba(0, 0, 0, 0) !important;
   /* border: none !important; */
   border-bottom: 2px, solid;
-  color: azure;
-  text-emphasis-color: white;
+  /* color: azure; */
+  /* text-emphasis-color: white; */
 }
 .dropbtn {
-  background-color: #4caf50;
-  color: white;
+  /* background-color: #4caf50; */
+  background-color: #5bc0de;
+  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
@@ -41,6 +50,21 @@ input.transparent-input {
 .dropdown {
   position: relative;
   display: inline-block;
+}
+
+/* .dropdown :hover {
+  color: gold;
+} */
+
+.navbuttons:hover {
+  color: gold;
+}
+
+.navbuttons {
+  text-decoration: none;
+  color: black;
+  padding: 5px;
+  font-size: medium;
 }
 
 .dropdown-content {
@@ -61,6 +85,8 @@ input.transparent-input {
 
 .dropdown-content a:hover {
   background-color: #f1f1f1;
+  text-decoration: none;
+  color: black;
 }
 
 .dropdown:hover .dropdown-content {
@@ -68,5 +94,80 @@ input.transparent-input {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #3e8e41;
+  /* /* background-color: #3e8e41; */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 6%;
+}
+
+.nav-list {
+  flex: 1;
+  text-align: center;
+  padding-left: 572px;
+  margin-top: -23px;
+}
+.nav-list ul li {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 12px;
+}
+
+.nav-list ul li a {
+  text-decoration: none;
+  font-size: 25px;
+  color: coral;
+}
+
+.nav-list ul li a::after {
+  content: "";
+  width: 0%;
+  background: crimson;
+  margin: auto;
+  height: 2px;
+  display: block;
+  transition: 1s;
+}
+
+.nav-list ul li a:hover::after {
+  width: 100%;
+  color: rgb(26, 100, 129);
+}
+
+.textbook {
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.textbooks h1 {
+  font-size: xx-large;
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 34px;
+  border: 3px solid black;
+  color: cornsilk;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  font-size: 13px;
+}
+.btn:hover {
+  border: 1px solid rgb(0, 0, 0);
+  transition: 1s;
+  background: yellow;
+  /* lightcoral; */
+}
+
+.input {
+  background-color: gold;
 }

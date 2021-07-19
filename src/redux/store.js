@@ -10,6 +10,7 @@ import { BillReducer } from "./BillReducer";
 import { PaymentsReducer } from "./PaymentsReducer";
 import { UserReducer } from "./UserReducer";
 import { CustomerReducer } from "./CustomerReducer";
+import { ConnectionReducer } from "./ConnectionReducer";
 
 const rootReducer = combineReducers({
   reading: ReadingReducer,
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   payments: PaymentsReducer,
   user: UserReducer,
   customer: CustomerReducer,
+  connection: ConnectionReducer,
 });
 
 const store = createStore(rootReducer, applyMiddleware(thunk));

@@ -25,15 +25,15 @@ export const CustomerList = () => {
     dispatch(getAllCustomerAction());
   }, []);
 
-  // const updateRecord = (item) => {
-  //   console.log("Update Record", item);
+  const updateRecord = (item) => {
+    console.log("Update Record", item);
 
-  //   // 3 :: updating the store
-  //   dispatch(updateRenderAction(item));
+    // 3 :: updating the store
+    dispatch(updateRenderAction(item));
 
-  //   // navigateing to the page
-  //   history.push("/customer-upsert");
-  // };
+    // navigateing to the page
+    history.push("/customer-upsert");
+  };
 
   // const [id, setId] = useState("");
   // const updateId = (e) => {
@@ -117,7 +117,7 @@ export const CustomerList = () => {
                   value="Update"
                   className="btn btn-outline-success btn-sm  mr-1"
                   // onClick={updateRecord} :1
-                  // onClick={() => updateRecord(item)}
+                  onClick={() => updateRecord(item)}
                 />
               </td>
             </tr>

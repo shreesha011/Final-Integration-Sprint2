@@ -20,6 +20,11 @@ import { AppNav } from "./Pages/AppNav";
 import { CustomerList } from "./Pages/CustomerList";
 import { CustomerUpsert } from "./Pages/CustomerUpsert";
 import { findcustomer } from "./Pages/findcustomer";
+import { ConnectionUpsert } from "./Pages/ConnectionUpsert";
+import { Address } from "./Pages/Address";
+import { ConnectionFind } from "./Pages/ConnectionFind";
+import { InActive } from "./Pages/InActive";
+import { AboutUs } from "./Pages/AboutUs";
 
 function App() {
   const history = useHistory();
@@ -43,6 +48,14 @@ function App() {
       <Route exact path="/home" component={Home} />
       <Route exact path="/user-signin" component={UserSignIn} />
       <Route exact path="/user-signup" component={UserSignUp} />
+
+      <Route exact path="/connection-upsert" component={ConnectionUpsert} />
+
+      <Route exact path="/address" component={Address} />
+      <Route exact path="/active" component={ConnectionFind} />
+      <Route exact path="/inactive" component={InActive} />
+
+      <Route exact path="/about-us" component={AboutUs} />
     </>
   );
 }

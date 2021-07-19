@@ -15,7 +15,7 @@ export const AppNav = () => {
   return (
     <Navbar bg="info" varient="dark" expand="lg">
       <Navbar.Brand href="#home" className="text-light" class="dropbtn">
-        EBMS
+        <h4>EBMS</h4>
       </Navbar.Brand>
 
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -23,49 +23,84 @@ export const AppNav = () => {
         <Nav className="ml-auto">
           <Nav.Link as={Link} to="/home">
             <div class="dropdown">
-              <button class="dropbtn">Home</button>
+              {/* <button class="dropbtn">Home</button> */}
+              <a class="navbuttons">Home</a>
               <div class="dropdown-content">
-                <Link to="/home">Home Page</Link>
+                <Link to="/home">
+                  <h6>Home Page</h6>
+                </Link>
               </div>
             </div>
           </Nav.Link>
 
           <Nav.Link as={Link}>
             <div class="dropdown">
-              <button class="dropbtn">Customer</button>
+              {/* <button class="dropbtn">Customer</button> */}
+              <a class="navbuttons">Customer</a>
               <div class="dropdown-content">
-                <Link to="/customer-upsert">Customer Register</Link>
-                <Link to="/customer-list">Customer List</Link>
-                <Link to="/find-customer">Find Customer</Link>
+                <Link to="/customer-upsert">
+                  <h6>Customer Register</h6>
+                </Link>
+                <Link to="/customer-list">
+                  <h6>Customer List</h6>
+                </Link>
+                <Link to="/find-customer">
+                  <h6>Find Customer</h6>
+                </Link>
               </div>
             </div>
           </Nav.Link>
 
           <Nav.Link as={Link}>
             <div class="dropdown">
-              <button class="dropbtn">Customer</button>
+              {/* <button class="dropbtn">Address</button> */}
+              <a class="navbuttons">Address</a>
               <div class="dropdown-content">
-                <Link to="/customer-upsert">Customer Register</Link>
-                <Link to="/customer-list">Customer List</Link>
-                <Link to="/find-customer">Find Customer</Link>
+                <Link to="/address">
+                  <h6>Add address</h6>
+                </Link>
+              </div>
+            </div>
+          </Nav.Link>
+
+          <Nav.Link as={Link}>
+            <div class="dropdown">
+              {/* <button class="dropbtn">Connection</button> */}
+              <a class="navbuttons">Connection</a>
+              <div class="dropdown-content">
+                <Link to="/connection-upsert">
+                  <h6>Add Connection</h6>
+                </Link>
+                <Link to="/active">
+                  <h6>Active Connection</h6>
+                </Link>
+                <Link to="/inactive">
+                  <h6>InActive Connection</h6>
+                </Link>
               </div>
             </div>
           </Nav.Link>
 
           <Nav.Link as={Link} to="/customer-upsert">
             <div class="dropdown">
-              <button class="dropbtn">Reading</button>
+              {/* <button class="dropbtn">Reading</button> */}
+              <a class="navbuttons">Reading</a>
               <div class="dropdown-content">
-                <Link to="/reading-upsert">Reading Page</Link>
+                <Link to="/reading-upsert">
+                  <h6>Reading Page</h6>
+                </Link>
               </div>
             </div>
           </Nav.Link>
 
           <Nav.Link as={Link} to="/customer-upsert">
             <div class="dropdown">
-              <button class="dropbtn">Bill</button>
+              {/* <button class="dropbtn">Bill</button> */}
+              <a class="navbuttons">Bill</a>
               <div class="dropdown-content">
-                <Link to="/bill-upsert">Bill Page</Link>
+                <Link to="/bill-upsert">
+                  <h6>Bill Page</h6>
+                </Link>
               </div>
             </div>
           </Nav.Link>
@@ -73,7 +108,8 @@ export const AppNav = () => {
           <Nav.Link as={Link}>
             <div class="dropdown">
               <Link to="/user-signin">
-                <button class="dropbtn">Log Out</button>
+                {/* <button class="dropbtn">Log Out</button> */}
+                <a class="navbuttons">Log Out</a>
               </Link>
             </div>
           </Nav.Link>
