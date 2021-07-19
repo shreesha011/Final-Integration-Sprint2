@@ -44,7 +44,7 @@ export const UserSignIn = () => {
         <img width="80%" src={image1} alt="image1.jpg" />
       </div> */}
       <div className="w-50">
-        {state.loginValidation && (
+        {state.user.loginValidation && (
           <div className="text-center alert alert-danger mb-4">
             <a>Invalid Credentials</a>
           </div>

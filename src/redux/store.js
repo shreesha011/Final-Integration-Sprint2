@@ -18,5 +18,6 @@ const rootReducer = combineReducers({
   user: UserReducer,
   customer: CustomerReducer,
 });
+
 const store = createStore(rootReducer, applyMiddleware(thunk));
 export { store };

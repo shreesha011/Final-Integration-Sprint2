@@ -38,7 +38,7 @@ export const UserSignUp = () => {
       <div className="w-50 h-50">
         <h1 className="text-dark text-center mb-4">SIGN UP</h1>
 
-        {state.progress && (
+        {state.user.progress && (
           <div className="text-center alert alert-success mb-4">
             <a>Successfully SignedUp</a>
           </div>

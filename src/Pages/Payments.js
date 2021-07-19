@@ -14,34 +14,55 @@ export const Payments = () => {
   const [expirationMonth, setExpirationMonth] = useState(null);
   const [expirationYear, setExpirationYear] = useState(null);
   const [cvv, setCvv] = useState(null);
-  const [Cardholdername, setName] = useState(null);
+  const [Cardholdername, setCardholdername] = useState(null);
   const state = useSelector((state) => state.bill);
   const payments = useSelector((state) => state.payments);
   const id = 1;
   const dispatch = useDispatch();
 
+  //   function handleCreditPayment() {
+  //     dispatch(
+  //       doCreditPayment({
+  //         paymentMode: "CREDIT",
+  //         bill: {
+  //           billId: state.bill.billId,
+  //         },
+  //       })
+  //     );
+  //   }
+
   function handleCreditPayment() {
-    dispatch(
-      doCreditPayment({
-        paymentMode: "CREDIT",
-        bill: {
-          billId: state.bill.billId,
-        },
-      })
-    );
+    if (cardNum.toString().length !== 16) {
+      alert("Enter valid card number!");
+    } else if (expirationMonth < 0 || expirationMonth > 12) {
+      alert("Enter valid month!");
+    } else {
+      dispatch(
+        doCreditPayment({
+          paymentMode: "CREDIT",
+          bill: {
+            billId: state.bill.billId,
+          },
+        })
+      );
+    }
   }
 
   const handleDebitPayment = () => {
-    dispatch(
-      doCreditPayment({
-        paymentMode: "DEBIT",
-        bill: {
-          billId: state.bill.billId,
-        },
-      })
-    );
-    // console.log("Paying with debit..");
-    // console.log(cardNum, expirationMonth, expirationYear, cvv, amount);
+    if (cardNum.toString().length !== 16) {
+      alert("Enter valid card number!");
+    } else if (expirationMonth < 0 || expirationMonth > 12) {
+      alert("Enter valid month!");
+    } else {
+      dispatch(
+        doCreditPayment({
+          paymentMode: "DEBIT",
+          bill: {
+            billId: state.bill.billId,
+          },
+        })
+      );
+    }
   };
 
   // onsubmit = () => {
@@ -66,18 +87,18 @@ export const Payments = () => {
   }
   return (
     <div className="container">
-      <h2 className="mb-3 p-3 text-center bg-dark text-light">Payments</h2>
+      <h2 className="mb-3 p-3 text-center text-dark">Payments</h2>
       {payments.payment?.status && (
         <div class={"payment-" + payments.payment.status}>
           Your payment {payments.payment.status}
         </div>
       )}
-      <div id="accordion">
+      <div id="accordion" style={{ maxWidth: "700px", margin: "auto" }}>
         <div className="card">
           <div className="card-header" id="headingOne">
             <h5 className="mb-2">
               <button
-                class="btn btn-link"
+                class="btn btn-link btn-info text-light w-25"
                 data-toggle="collapse"
                 data-target="#collapseOne"
                 aria-expanded="true"
@@ -93,21 +114,21 @@ export const Payments = () => {
             aria-labelledby="headingOne"
             data-parent="#accordion"
           >
-            <div className="form-group">
+            <div className="form-group ml-3">
               <label className="d-block">CARD NUMBER</label>
               <input
                 type="number"
                 name="cardNumber"
                 id="cardNumber"
-                onChange={(e) => setName(e.target.value)}
+                onChange={(e) => setCardNum(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group ml-3">
               <label className="d-block">EXPIRATION DATE</label>
               <div className="row">
                 <div className="col">
                   <input
-                    type="date"
+                    type="text"
                     name="expiratonMonth"
                     id="expiratonMonth"
                     onChange={(e) => setExpirationMonth(e.target.value)}
@@ -120,9 +141,10 @@ export const Payments = () => {
   <option value="audi">Audi</option>
 </select> */}
                 </div>
+
                 <div className="col">
                   <input
-                    type="date"
+                    type="text"
                     name="expiratonYear"
                     id="expiratonYear"
                     onChange={(e) => setExpirationYear(e.target.value)}
@@ -131,7 +153,7 @@ export const Payments = () => {
                 </div>
               </div>
             </div>
-            <div className="form-group">
+            <div className="form-group ml-3">
               <label className="d-block">CVV</label>
               <input
                 type="password"
@@ -143,20 +165,23 @@ export const Payments = () => {
                 onChange={(e) => setCvv(e.target.value)}
               />
             </div>
-            <div className="form-group">
-              <label className="d-block">CARD NAME</label>
+            <div className="form-group ml-3">
+              <label className="d-block">CARD HOLDER NAME</label>
               <input
                 type="text"
                 name="cardNumber"
                 id="cardNumber"
-                onChange={(e) => setCardNum(e.target.value)}
+                onChange={(e) => setCardholdername(e.target.value)}
               />
             </div>
-            <div className="form-group">
+            <div className="form-group ml-3">
               <label className="d-block">AMOUNT</label>
               <input type="text" disabled value={state.bill.billAmount} />
             </div>
-            <div className="btn btn-success" onClick={handleCreditPayment}>
+            <div
+              className="btn btn-success ml-3 mb-3"
+              onClick={handleCreditPayment}
+            >
               PAY
             </div>
           </div>
@@ -165,7 +190,7 @@ export const Payments = () => {
           <div className="card-header" id="headingTwo">
             <h5 className="mb-0">
               <button
-                className="btn btn-link collapsed"
+                className="btn btn-link collapsed btn-info text-light w-25"
                 data-toggle="collapse"
                 data-target="#collapseTwo"
                 aria-expanded="false"
@@ -191,11 +216,11 @@ export const Payments = () => {
               />
             </div>
             <div className="form-group">
-              <label className="d-block">EXPIRATION DATE</label>
               <div className="row">
                 <div className="col">
+                  <label className="d-block">EXPIRATION DATE</label>
                   <input
-                    type="date"
+                    type="text"
                     name="expiratonMonth"
                     id="expiratonMonth"
                     onChange={(e) => setExpirationMonth(e.target.value)}
@@ -205,7 +230,7 @@ export const Payments = () => {
                 <div className="col">
                   <label className="d-block"> YEAR</label>
                   <input
-                    type="date"
+                    type="text"
                     name="expiratonYear"
                     id="expiratonYear"
                     onChange={(e) => setExpirationYear(e.target.value)}
@@ -235,7 +260,7 @@ export const Payments = () => {
                 required
                 name="cardNumber"
                 id="cardNumber"
-                onChange={(e) => setCardNum(e.target.value)}
+                onChange={(e) => setCardholdername(e.target.value)}
               />
             </div>
             <div className="form-group">
@@ -251,7 +276,7 @@ export const Payments = () => {
           <div className="card-header" id="headingThree">
             <h5 className="mb-0">
               <button
-                className="btn btn-link collapsed"
+                className="btn btn-link collapsed btn-info text-light w-25"
                 data-toggle="collapse"
                 data-target="#collapseThree"
                 aria-expanded="false"
