@@ -74,9 +74,9 @@ export const AppNav = () => {
                 <Link to="/active">
                   <h6>Active Connection</h6>
                 </Link>
-                <Link to="/inactive">
+                {/* <Link to="/inactive">
                   <h6>InActive Connection</h6>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </Nav.Link>

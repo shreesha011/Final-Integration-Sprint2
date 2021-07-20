@@ -30,6 +30,7 @@
 
 .payment-successful {
   background: green;
+  color: white;
 }
 .payment-failed {
   background: red;

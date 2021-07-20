@@ -101,146 +101,151 @@ export const CustomerUpsert = () => {
       style={{ height: "100vh" }}
     >
       <AppNav />
-      {/* <div
-        style={{
-          backgroundImage: `url("https://picsum.photos/800/300?electricity")`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-        }}
-      > */}
-      <div className="alert alert-secondary ">
-        {state.customer.uref.customerId ? (
-          <h5>Customer Update</h5>
-        ) : (
-          <h5>Customer Registration</h5>
-        )}
-      </div>
-
-      {/* 
+      <div class="customerbg">
+        <div className="alert alert-secondary ">
+          {state.customer.uref.customerId ? (
+            <h5>Customer Update</h5>
+          ) : (
+            <h5>Customer Registration</h5>
+          )}
+        </div>
+        {/* 
       <div>
         <h5>Employee Create</h5>
       </div> */}
+        {state.customer.progress && (
+          <div className="mx-4 alert alert-success">Successful</div>
+        )}
 
-      {state.customer.progress && (
-        <div className="mx-4 alert alert-success">Successful</div>
-      )}
+        <form ref={formEl} className="mx-4 needs-validation" noValidate>
+          <div className="w-50 h-50 justify-content-center align-items-center text-center">
+            <div>
+              {/* style={{ paddingLeft: "400px" }} */}
+              <input
+                type="text"
+                value={firstName}
+                onChange={updateFirstName}
+                pattern="[A-Za-z]{4,}"
+                className="form-control  transparent-input form-control-lg mb-1 text-light"
+                placeholder="Enter First Name"
+                minLength="3"
+                maxLength="30"
+                required
 
-      <form ref={formEl} className="mx-4 needs-validation" noValidate>
-        <div style={{ paddingLeft: "400px" }}>
-          <input
-            type="text"
-            value={firstName}
-            onChange={updateFirstName}
-            className="form-control  transparent-input form-control-lg mb-1 w-10 "
-            placeholder="Enter First Name"
-            minLength="3"
-            maxLength="30"
-            required
-            style={{ width: "600px" }}
-          />
-        </div>
+                // style={{ width: "600px" }}
+              />
+            </div>
 
-        <div style={{ paddingLeft: "400px" }}>
-          <input
-            type="text"
-            value={middleName}
-            onChange={updateMiddleName}
-            className="form-control transparent-input form-control-lg mb-1"
-            placeholder="Enter Middle Name"
-            minLength="3"
-            maxLength="30"
-            required
-            style={{ width: "600px" }}
-          />
-        </div>
+            <div>
+              <input
+                type="text"
+                value={middleName}
+                onChange={updateMiddleName}
+                pattern="[A-Za-z]{0,}"
+                className="form-control transparent-input form-control-lg mb-1 text-light"
+                placeholder="Enter Middle Name"
+                minLength="3"
+                maxLength="30"
+                required
+                // style={{ width: "600px" }}
+              />
+            </div>
 
-        <div style={{ paddingLeft: "400px" }}>
-          <input
-            type="text"
-            value={lastName}
-            onChange={updateLastName}
-            className="form-control transparent-input form-control-lg mb-1"
-            placeholder="Enter Last Name"
-            minLength="3"
-            maxLength="30"
-            required
-            style={{ width: "600px" }}
-          />
-        </div>
+            <div>
+              <input
+                type="text"
+                value={lastName}
+                onChange={updateLastName}
+                pattern="[A-Za-z]{2,}"
+                className="form-control transparent-input form-control-lg mb-1 text-light"
+                placeholder="Enter Last Name"
+                minLength="3"
+                maxLength="30"
+                required
+                // style={{ width: "600px" }}
+              />
+            </div>
 
-        <div style={{ paddingLeft: "400px" }}>
-          <input
-            type="text"
-            value={addharNumber}
-            onChange={updateAddharNumber}
-            className="form-control transparent-input form-control-lg mb-1"
-            placeholder="Enter Adhar Number"
-            maxLength="12"
-            required
-            style={{ width: "600px" }}
-          />
-        </div>
+            <div>
+              <input
+                type="text"
+                value={addharNumber}
+                onChange={updateAddharNumber}
+                pattern=".{12}"
+                className="form-control transparent-input form-control-lg mb-1 text-light"
+                placeholder="Enter Adhar Number"
+                maxLength="12"
+                required
+                // style={{ width: "600px" }}
+              />
+            </div>
 
-        <div style={{ paddingLeft: "400px" }}>
-          <input
-            type="email"
-            value={email}
-            onChange={updateEmail}
-            className="form-control transparent-input form-control-lg mb-1"
-            placeholder="Enter Email"
-            minLength="3"
-            maxLength="30"
-            required
-            style={{ width: "600px" }}
-          />
-        </div>
-        <div style={{ paddingLeft: "400px" }}>
-          <input
-            type="text"
-            value={mobileNumber}
-            onChange={updateMobileNumber}
-            className="form-control transparent-input form-control-lg mb-1 w-10"
-            placeholder="Enter Mobile Number"
-            minLength="3"
-            maxLength="30"
-            required
-            style={{ width: "600px" }}
-          />
-        </div>
+            <div>
+              <input
+                type="email"
+                value={email}
+                onChange={updateEmail}
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                className="form-control transparent-input form-control-lg mb-1 text-light"
+                placeholder="Enter Email"
+                minLength="3"
+                maxLength="30"
+                required
+                // style={{ width: "600px" }}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                value={mobileNumber}
+                onChange={updateMobileNumber}
+                pattern=".{10}"
+                className="form-control transparent-input form-control-lg mb-1  text-light"
+                placeholder="Enter Mobile Number"
+                minLength="3"
+                maxLength="30"
+                required
+                // style={{ width: "600px" }}
+              />
+            </div>
 
-        <div style={{ paddingLeft: "400px" }}>
-          <input
-            type="text"
-            value={gender}
-            onChange={updateGender}
-            className="form-control transparent-input form-control-lg mb-1"
-            placeholder="Enter Gender"
-            minLength="3"
-            maxLength="6"
-            required
-            style={{ width: "600px" }}
-          />
-        </div>
+            <select
+              value={gender}
+              onChange={updateGender}
+              className="form-control form-control-lg mb-1 transparent-select text-light"
+              style={{ backgroundColor: "transparent" }}
+            >
+              <option className="text-dark" value="">
+                Choose Gender
+              </option>
+              <option className="text-dark" value="Male">
+                MALE
+              </option>
+              <option className="text-dark" value="Female">
+                FEMALE
+              </option>
+            </select>
 
-        <div style={{ paddingLeft: "400px" }}>
-          {state.customer.uref.customerId ? (
-            <input
-              type="button"
-              onClick={updateCustomer}
-              value="Update Employee"
-              className="btn btn-md btn-success w-10"
-            />
-          ) : (
-            <input
-              type="button"
-              onClick={addNewCustomer}
-              value="Add Customer"
-              className="btn btn-md btn-success w-10"
-            />
-          )}
-        </div>
-      </form>
+            <div>
+              {state.customer.uref.customerId ? (
+                <input
+                  type="button"
+                  onClick={updateCustomer}
+                  value="Update Employee"
+                  className="btn btn-md btn-success w-10"
+                />
+              ) : (
+                <input
+                  type="button"
+                  onClick={addNewCustomer}
+                  value="Add Customer"
+                  className="btn btn-md btn-success w-10"
+                />
+              )}
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    // </div>
   );
 };

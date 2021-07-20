@@ -70,7 +70,7 @@ const FilterOptions = (props) => {
         checked={props.selectedFilter === "filterByPinCode"}
         onChange={handleSelectionChanged}
       />
-      <label for="filterByPinCode" className="mr-4 text">
+      <label for="filterByPinCode" className="mr-4 text-light">
         View By Pincode
       </label>
       <input
@@ -81,7 +81,7 @@ const FilterOptions = (props) => {
         checked={props.selectedFilter === "filterByVillage"}
         onChange={handleSelectionChanged}
       />
-      <label for="filterVillage" className="mr-4 text ">
+      <label for="filterVillage" className="mr-4 text-light ">
         View By Village
       </label>
       <input
@@ -92,7 +92,7 @@ const FilterOptions = (props) => {
         checked={props.selectedFilter === "filterByDistrict"}
         onChange={handleSelectionChanged}
       />
-      <label for="filterVillage" className="mr-4 text ">
+      <label for="filterVillage" className="mr-4 text-light">
         View By District
       </label>
     </div>

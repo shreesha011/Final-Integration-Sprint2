@@ -87,7 +87,7 @@ export const Payments = () => {
   }
   return (
     <div className="container">
-      <h2 className="mb-3 p-3 text-center text-dark">Payments</h2>
+      <h2 className="mb-3 p-3 text-center text-light">Payments</h2>
       {payments.payment?.status && (
         <div class={"payment-" + payments.payment.status}>
           Your payment {payments.payment.status}

@@ -73,10 +73,12 @@ export const Home = () => {
 
       <div class="textbook">
         <h1 class="textbooks">Welcome To Electricity Bill Management System</h1>
-        <p>
+        {/* <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus rem
           voluptatem, dolorum
-        </p>
+        </p> */}
+        <p>AN AUTOMATED BILLING SYSTEM</p>
+
         <a href="about-us" class="btn" style={{ border: "2px solid black" }}>
           visit us to know more
         </a>

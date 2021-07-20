@@ -51,7 +51,7 @@ export function Filter(props) {
         onFilterOptionChange={onFilterOptionChange}
       />
       {filterElement}
-      <button className="btn btn-lg btn-secondary w-100" onClick={onSearch}>
+      <button className="btn btn-md  btn-success w-10 mb-4 " onClick={onSearch}>
         Search
       </button>
     </div>
@@ -73,8 +73,9 @@ export const FilterOptions = (props) => {
         value="filterByEmail"
         checked={props.selectedFilter === "filterByEmail"}
         onChange={handleSelectionChanged}
+        // className=" text-light"
       />
-      <label for="filterByEmail" className="mr-4">
+      <label for="filterByEmail" className="mr-4 text-light">
         View By Email
       </label>
 
@@ -86,7 +87,7 @@ export const FilterOptions = (props) => {
         checked={props.selectedFilter === "filterByPhone"}
         onChange={handleSelectionChanged}
       />
-      <label for="filterByPhone" className="mr-4">
+      <label for="filterByPhone" className="mr-4 text-light">
         View By Phonenumber
       </label>
 
@@ -99,7 +100,7 @@ export const FilterOptions = (props) => {
         onChange={handleSelectionChanged}
       />
 
-      <label for="filterByConsumerNumber" className="mr-4">
+      <label for="filterByConsumerNumber" className="mr-4 text-light">
         View By ConsumerNumber
       </label>
     </div>
@@ -112,7 +113,7 @@ export const EmailFilter = (props) => {
   }
   return (
     <div>
-      <label className="mr-3">Email </label>
+      <label className="mr-3 text-light">Email </label>
       <input
         type="text"
         placeholder="Enter email id"
@@ -130,7 +131,7 @@ export const PhoneNumberFilter = (props) => {
   }
   return (
     <div>
-      <label className="mr-3">Phone number </label>
+      <label className="mr-3 text-light">Phone number </label>
       <input
         type="text"
         placeholder="Enter phone number"
@@ -148,7 +149,7 @@ export const ConsumerNumberFilter = (props) => {
   }
   return (
     <div>
-      <label className="mr-3">Consumer Number </label>
+      <label className="mr-3 text-light">Consumer Number </label>
       <input
         type="text"
         placeholder="Enter Consumer Number"
@@ -172,28 +173,28 @@ export const ViewBill = () => {
   if (!state.bill) {
     return (
       <div>
-        <h1>No matching bill found</h1>
+        <h1 className="mx-4 alert alert-danger mt-3">No matching bill found</h1>
       </div>
     );
   }
   return (
     <div>
-      <h1>Bill Details</h1>
+      <h1 className="bg-light  p-3">Bill Details</h1>
       {/* <label>Bill Id</label> */}
-      <div>
+      <div className="text-light">
         <label>Bill Id:</label>
         <label>{state.bill.billId}</label>
       </div>
 
-      <div>
+      <div className="text-light">
         <label>Connection Type:</label>
         <label>{state.bill.connectiontype} "NON_INDUSTRIAL",</label>
       </div>
-      <div>
+      <div className="text-light">
         <label>Units consumed:</label>
         <label>{state.bill.unitsConsumed}</label>
       </div>
-      <div>
+      <div className="text-light">
         <label>Bill Amount:</label>
         <label>{state.bill.billAmount} INR</label>
       </div>
@@ -201,7 +202,7 @@ export const ViewBill = () => {
       <div>
         <button
           class="center"
-          className="btn btn-lg btn-secondary w-100"
+          className="btn btn-md btn-success w-10"
           onClick={handleSubmit}
         >
           Pay Bill
@@ -214,7 +215,7 @@ export const Billupsert = () => {
   return (
     <div>
       <AppNav />
-      <h1>Billupsert</h1>
+      <h1 className="bg-light  p-3">Billupsert</h1>
 
       <Filter />
       <ViewBill />

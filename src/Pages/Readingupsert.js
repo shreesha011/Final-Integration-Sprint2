@@ -122,7 +122,7 @@ export const Readingupsert = () => {
             type="submit"
             value="submit"
             onClick={handleSubmit}
-            className="btn btn-lg btn-secondary w-100"
+            className="btn btn-lg btn-success w-100"
           />
         </div>
       </form>
